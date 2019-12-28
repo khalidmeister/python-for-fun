@@ -1,7 +1,7 @@
 # Adhan Sleeper
 Program ini akan menampilkan **jadwal adzan** sesuai dengan kota yang diinginkan dan program ini akan membuat komputer anda **otomatis shutdown** ketika 5 menit sebelum adzan.
 
-Berikut source code nya dan semoga bermanfaat!
+Berikut [source code](https://github.com/khalidmeister/python-for-fun/blob/master/1-Adhan-Sleeper/app.py) nya dan semoga bermanfaat!
 
 Catatan:
 Untuk pemakaiannya, tinggal klik aplikasi tersebut dan biarkan. Pastikan python sudah terinstall dan terkonseksi dengan internet. 
