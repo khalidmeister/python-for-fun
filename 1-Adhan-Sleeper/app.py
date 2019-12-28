@@ -45,8 +45,9 @@ def new_time(i):
 	return jam + menit
 
 # Requests data from API (Al-Adhan)
-kota = input("Masukkan nama kota mu: ")
-address = 'http://api.aladhan.com/v1/calendarByCity?city=' + kota + '&country=Indonesia&method=11'
+kota= input("Masukkan nama kota mu: ")
+negara = input("Masukkan nama negara mu: ")
+address = 'http://api.aladhan.com/v1/calendarByCity?city=' + kota + '&country='+ negara +'Indonesia&method=11'
 json_data = requests.get(address).json()
 adhan_time = json_data['data'][0]['timings']
 names = adhan_time
@@ -81,7 +82,6 @@ for i in waktu:
 # Real-Time
 # Ketika 5 menit sebelum adzan masuk, laptop hibernate
 while True:
-	print(datetime.datetime.now().time())
 	if now == flag and over == False:
 		now = Waktu(datetime.datetime.now().time()).get_time()
 		os.system("rundll32.exe powrprof.dll, SetSuspendState 0,1,0")
