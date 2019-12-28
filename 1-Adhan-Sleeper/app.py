@@ -67,19 +67,24 @@ for k, v in names.items():
 
 # Mengambil waktu adzan berikutnya
 now = Waktu(datetime.datetime.now().time()).get_time()
+over = False
 for i in waktu:
 	i = i.get_time()
-	check = i < now
+	flag = new_time(i)
+	check = i >= now
 	if check:
 		flag = new_time(i)
 		break
+	else:
+		over = True
 
 # Real-Time
 # Ketika 5 menit sebelum adzan masuk, laptop hibernate
 while True:
 	print(datetime.datetime.now().time())
-	if now == flag:
+	if now == flag and over == False:
 		now = Waktu(datetime.datetime.now().time()).get_time()
 		os.system("rundll32.exe powrprof.dll, SetSuspendState 0,1,0")
 		quit()
+
 	time.sleep(1)
