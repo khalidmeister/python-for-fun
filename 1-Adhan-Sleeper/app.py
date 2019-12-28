@@ -69,7 +69,7 @@ for k, v in names.items():
 now = Waktu(datetime.datetime.now().time()).get_time()
 for i in waktu:
 	i = i.get_time()
-	check = i < now
+	check = i >= now
 	if check:
 		flag = new_time(i)
 		break
